@@ -1,20 +1,22 @@
 package main
 
-import (
-	"fmt"
-)
+import "fmt"
 
 func main() {
 	x := 100
 
-	if x == 100 {
-		fmt.Println(x, "x equals 100")
-	} else if x > 100 {
-		fmt.Println(x, "x greater than 100")
-	} else {
-		fmt.Println(x, "x less than 100")
-	}
+	swich(x)
+}
 
-	//or => ||
-	//and => &&
+func swich(x int) {
+	switch x {
+	case 100:
+		fmt.Println("x is 100")
+		break
+	case 200:
+		fmt.Println("x equal to 200")
+		break
+	default:
+		fmt.Println("swich fail")
+	}
 }
