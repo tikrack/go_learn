@@ -1,18 +1,20 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+)
 
 func main() {
-	//var number int
-	//number = 100
+	x := 100
 
-	number := 100
+	if x == 100 {
+		fmt.Println(x, "x equals 100")
+	} else if x > 100 {
+		fmt.Println(x, "x greater than 100")
+	} else {
+		fmt.Println(x, "x less than 100")
+	}
 
-	//var float float64
-	//float = float64(number)
-
-	float := float64(100)
-
-	fmt.Printf("value: %v and Type: %T \n", number, number)
-	fmt.Printf("value: %v and Type: %T \n", float, float)
+	//or => ||
+	//and => &&
 }
