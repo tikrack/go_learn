@@ -1,18 +1,15 @@
 package main
 
-import (
-	"fmt"
-)
-
 func main() {
-	var dama int = 30
+	var dama = 20
 	println(dama, "\n")
 
-	if dama <= 10 {
-		fmt.Println("Weather is so cold")
-	} else if dama > 10 && dama < 30 {
-		fmt.Println("Weather is so good")
-	} else {
-		fmt.Println("Weather is so hard")
+	switch dama {
+	case 0:
+		println("Hava is zero 0")
+	case 1:
+		println("Hava is not zero 1")
+	default:
+		println("Hava is not zero 2")
 	}
 }
