@@ -15,6 +15,10 @@ func main() {
 	}
 
 	for index, item := range list {
+		if index == 2 {
+			//break
+			//continue
+		}
 		println(index, item)
 	}
 }
