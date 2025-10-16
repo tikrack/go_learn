@@ -2,11 +2,17 @@ package main
 
 import (
 	"fmt"
-	"strings"
 )
 
 func main() {
-	var str string = "Hello my name is tester"
-	var splited = strings.Split(str, " ")
-	fmt.Println(strings.Join(splited, ","))
+	var dama int = 30
+	println(dama, "\n")
+
+	if dama <= 10 {
+		fmt.Println("Weather is so cold")
+	} else if dama > 10 && dama < 30 {
+		fmt.Println("Weather is so good")
+	} else {
+		fmt.Println("Weather is so hard")
+	}
 }
