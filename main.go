@@ -1,16 +1,24 @@
 package main
 
-import "fmt"
-
 func main() {
-	var names = []string{"Reza", "Hossein", "Mohamad", "Ali", "Hadi"}
+	text := "   Hello my name is tikrack   "
+	runes := []rune(text)
 
-	for index, name := range names {
-		if name == "Ali" {
-			names[index] = "Ali2"
+	a := false
+	length := 0
+
+	for i := len(runes) - 1; i >= 0; i-- {
+		char := runes[i]
+
+		if !a && char == ' ' {
+			continue
+		}
+		a = true
+		if char == ' ' {
 			break
 		}
+		length++
 	}
 
-	fmt.Println(names)
+	println(length)
 }
