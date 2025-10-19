@@ -1,24 +1,15 @@
 package main
 
+import "fmt"
+
 func main() {
-	text := "   Hello my name is tikrack   "
-	runes := []rune(text)
+	//Array
+	names := []string{"Ali", "Mohamad", "Reza", "Armin"}
 
-	a := false
-	length := 0
+	fmt.Println("Names: ", names)
 
-	for i := len(runes) - 1; i >= 0; i-- {
-		char := runes[i]
+	//Slice
+	var onToTwo = names[1:3] //3=2+1
 
-		if !a && char == ' ' {
-			continue
-		}
-		a = true
-		if char == ' ' {
-			break
-		}
-		length++
-	}
-
-	println(length)
+	fmt.Println("On To Two: ", onToTwo)
 }
