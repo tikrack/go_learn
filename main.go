@@ -3,13 +3,20 @@ package main
 import "fmt"
 
 func main() {
-	//Array
-	names := []string{"Ali", "Mohamad", "Reza", "Armin"}
+	var adads = make([]int, 4, 6)
 
-	fmt.Println("Names: ", names)
+	fmt.Println("Len: ", len(adads))
+	fmt.Println("Cap: ", cap(adads))
+	fmt.Println("----------------------------------------")
 
-	//Slice
-	var onToTwo = names[1:3] //3=2+1
+	adads = append(adads, 0, 2)
 
-	fmt.Println("On To Two: ", onToTwo)
+	fmt.Println("Len: ", len(adads))
+	fmt.Println("Cap: ", cap(adads))
+	fmt.Println("----------------------------------------")
+
+	adads = append(adads, 0, 2)
+
+	fmt.Println("Len: ", len(adads))
+	fmt.Println("Cap: ", cap(adads))
 }
