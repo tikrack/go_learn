@@ -2,16 +2,42 @@ package main
 
 import "fmt"
 
+func c() {
+	fmt.Print("\033[H\033[2J")
+}
+
+const (
+	Reset  = "\033[0m"
+	Yellow = "\033[33m"
+)
+
 func main() {
-	one()
+	var project byte = 1
+	var run = false
+
+	for run == false {
+		c()
+
+		println(Yellow)
+		println(" ╔═════╦════════════════════════════════╗")
+		println(" ║ ID  ║ Project                        ║")
+		println(" ╠═════╬════════════════════════════════╣")
+
+		if project == 1 {
+			print(" >")
+		} else {
+			print(" ║")
+		}
+		fmt.Printf("  1  ║ %s                 ║\n", "Throw the dice")
+
+		println(" ╚═════╩════════════════════════════════╝")
+		println(Reset)
+
+		run = true
+	}
 }
 
 func one() {
-	const (
-		Reset  = "\033[0m"
-		Yellow = "\033[33m"
-	)
-
 	var n int
 
 	fmt.Print("Enter number: ")
