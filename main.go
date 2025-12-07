@@ -3,20 +3,37 @@ package main
 import "fmt"
 
 func main() {
-	var adads = make([]int, 4, 6)
+	one()
+}
 
-	fmt.Println("Len: ", len(adads))
-	fmt.Println("Cap: ", cap(adads))
-	fmt.Println("----------------------------------------")
+func one() {
+	const (
+		Reset  = "\033[0m"
+		Yellow = "\033[33m"
+	)
 
-	adads = append(adads, 0, 2)
+	var n int
 
-	fmt.Println("Len: ", len(adads))
-	fmt.Println("Cap: ", cap(adads))
-	fmt.Println("----------------------------------------")
+	fmt.Print("Enter number: ")
+	fmt.Scan(&n)
 
-	adads = append(adads, 0, 2)
+	fmt.Println(Yellow)
 
-	fmt.Println("Len: ", len(adads))
-	fmt.Println("Cap: ", cap(adads))
+	for i := 1; i <= n; i++ {
+		for x := n - i; x > 0; x-- {
+			fmt.Print("  ")
+		}
+
+		for y := 1; y <= i; y++ {
+			fmt.Printf(" %d", y)
+		}
+
+		for z := i - 1; z >= 1; z-- {
+			fmt.Printf(" %d", z)
+		}
+
+		fmt.Println()
+	}
+
+	fmt.Println(Reset)
 }
