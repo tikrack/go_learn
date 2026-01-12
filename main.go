@@ -1,13 +1,9 @@
 package main
 
 func main() {
-	result := example(10, 20)
-
-	println(result)
+	example()
 }
 
-func example(a int, b int) (c int) {
-	c = a + b
+func example() {
 
-	return
 }
