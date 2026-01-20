@@ -1,6 +1,17 @@
 package main
 
-import "fmt"
+type A interface {
+	area() int
+}
+
+type Square struct {
+	Width  int
+	Height int
+}
+
+func (square Square) area() int {
+	return square.Width * square.Height
+}
 
 type Rectangle struct {
 	Width  int
@@ -11,8 +22,12 @@ func (rectangle Rectangle) area() int {
 	return rectangle.Width * rectangle.Height
 }
 
-func main() {
-	rect1 := Rectangle{Width: 10, Height: 20}
+func tenMultiply(a A) int {
+	return a.area() * 10
+}
 
-	fmt.Println(rect1.area())
+func main() {
+	rect := Rectangle{Width: 10, Height: 10}
+
+	println(tenMultiply(rect))
 }
