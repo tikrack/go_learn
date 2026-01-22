@@ -1,33 +1,35 @@
 package main
 
-type A interface {
-	area() int
+import "fmt"
+
+type Person struct {
+	Name   string
+	Family string
+	Age    int
 }
 
-type Square struct {
-	Width  int
-	Height int
-}
-
-func (square Square) area() int {
-	return square.Width * square.Height
-}
-
-type Rectangle struct {
-	Width  int
-	Height int
-}
-
-func (rectangle Rectangle) area() int {
-	return rectangle.Width * rectangle.Height
-}
-
-func tenMultiply(a A) int {
-	return a.area() * 10
+type PersonBuilder struct {
+	Person
 }
 
 func main() {
-	rect := Rectangle{Width: 10, Height: 10}
+	builder := PersonBuilder{}
 
-	println(tenMultiply(rect))
+	builder.setName("John")
+	builder.setFamily("Smith")
+
+	person := builder.Build()
+	fmt.Println(person)
+}
+
+func (b *PersonBuilder) setName(name string) {
+	b.Name = name
+}
+
+func (b *PersonBuilder) setFamily(family string) {
+	b.Family = family
+}
+
+func (b PersonBuilder) Build() Person {
+	return b.Person
 }
