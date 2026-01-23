@@ -2,9 +2,4 @@ module main
 
 go 1.25.1
 
-require rsc.io/quote v1.5.2
-
-require (
-	golang.org/x/text v0.0.0-20170915032832-14c0d48ead0c // indirect
-	rsc.io/sampler v1.3.0 // indirect
-)
+require github.com/jalaali/go-jalaali v0.0.0-20250521085720-bf793ab67800 // indirect
