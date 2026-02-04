@@ -5,11 +5,15 @@ import (
 )
 
 func main() {
+	mux := http.NewServeMux()
+
+	mux.HandleFunc("/", func(w http.ResponseWriter, r *http.Request) {
+		w.Write([]byte(`<h1>Hello</h1`))
+	})
+
 	server := http.Server{
-		Addr: ":8080",
-		Handler: http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
-			w.Write([]byte("Hello, World!"))
-		}),
+		Addr:    ":8080",
+		Handler: mux,
 	}
 
 	println("Project Serving in http://localhost:8080")
