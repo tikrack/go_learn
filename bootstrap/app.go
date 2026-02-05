@@ -3,6 +3,8 @@ package bootstrap
 import (
 	"main/routes"
 	"net/http"
+
+	"github.com/fatih/color"
 )
 
 func Run() {
@@ -15,6 +17,7 @@ func Run() {
 		Handler: mux,
 	}
 
+	color.Green("\nStarting server to http://localhost:8080\n")
 	err := server.ListenAndServe()
 
 	if err != nil {
