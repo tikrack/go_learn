@@ -1,11 +1,14 @@
-package utils
+package bootstrap
 
-import "net/http"
+import (
+	"main/routes"
+	"net/http"
+)
 
-func serve() {
+func Run() {
 	mux := http.NewServeMux()
 
-	routing()
+	routes.Api(mux)
 
 	server := http.Server{
 		Addr:    ":8080",

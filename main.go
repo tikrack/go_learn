@@ -1,5 +1,7 @@
 package main
 
-func main() {
+import "main/bootstrap"
 
+func main() {
+	bootstrap.Run()
 }
